@@ -1,0 +1,5 @@
+.gcloudignore
+.gitignore
+__pycache__
+.vscode
+*.egg-info

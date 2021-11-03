@@ -1,0 +1,4 @@
+cron:
+- description: "record building job"
+  url: /api/buildrecords
+  schedule: every 2 hours

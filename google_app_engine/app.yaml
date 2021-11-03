@@ -1,0 +1,33 @@
+runtime: python39
+instance_class: F2
+
+env_variables:
+  CLOUD_SQL_USERNAME: <SQL USERNAME>
+  CLOUD_SQL_PASSWORD: <SQL PASSWORD>
+  CLOUD_SQL_DATABASE_NAME: <SQL DB NAME>
+  CLOUD_SQL_CONNECTION_NAME: <SQL CONNECTION NAME>
+
+  NEXUSLIMS_DBAPI_USERNAME: <NEXUSLIMS DB API USERNAME>
+  NEXUSLIMS_DBAPI_PASSWORD: <NEXUSLIMS DB API PASSWORD>
+
+  NEXUSLIMS_CALENDAR_URL: https://<SHAREPOINT CALENDAR URL>
+  NEXUSLIMS_FRONTEND_URL: http://<CDCS URL>
+  NEXUSLIMS_FRONTEND_USERNAME: <CDCS USERNAME>
+  NEXUSLIMS_FRONTEND_PASSWORD: <CDCS PASSWORD>
+  NEXUSLIMS_DBAPI_URL: https://<NEXUSLIMS DB API URL>
+  NEXUSLIMS_DATA_BUCKET: <NEXUSLIMS RAW DATA BUCKET>
+
+handlers:
+  # force HTTPS
+  - url: /.*
+    script: auto
+    secure: always
+    redirect_http_response_code: 301
+
+automatic_scaling:
+  target_cpu_utilization: 0.8
+  min_instances: 1
+  max_instances: 4
+  min_pending_latency: automatic
+  max_pending_latency: automatic
+  max_concurrent_requests: 50

@@ -1,0 +1,8 @@
+hyperspy
+numpy
+matplotlib
+pillow
+scikit-image
+google-cloud-storage>=1.38.0
+
+./nexuslims

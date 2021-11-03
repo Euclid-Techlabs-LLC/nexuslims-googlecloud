@@ -1,0 +1,16 @@
+flask==2.0.1
+PyMySQL==1.0.2
+lxml
+pytz
+python-dateutil
+requests>=2.25.1
+requests_ntlm
+numpy
+scipy
+matplotlib
+ldap3
+scikit-learn
+tqdm
+google-cloud-storage>=1.38.0
+
+./nexuslims
